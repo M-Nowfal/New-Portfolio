@@ -7,7 +7,7 @@ import React from "react";
 export default function Author() {
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-
+    e.preventDefault();
   };
 
   return (

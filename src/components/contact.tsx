@@ -44,7 +44,7 @@ export function Contact() {
           </h1>
           <div className="w-24 h-2 bg-gradient-to-r from-orange-600 to-amber-600 rounded-full mx-auto mt-6 mb-4"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I"d love to hear from you. Send me a message and I"ll respond as soon as possible.
+            Have a project in mind or want to collaborate? I&apos;d love to hear from you. Send me a message and I&apos;ll respond as soon as possible.
           </p>
         </div>
 
@@ -54,10 +54,10 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
                 <MessageCircle className="text-orange-600" size={24} />
-                Let"s talk
+                Let&apos;s talk
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                I"m currently available for freelance work and open to new opportunities. If you have a project that you want to get started or think you need my help with something, then get in touch.
+                I&apos;m currently available for freelance work and open to new opportunities. If you have a project that you want to get started or think you need my help with something, then get in touch.
               </p>
             </div>
 
@@ -141,7 +141,7 @@ export function Contact() {
                   <MailOpen className="text-orange-600" size={32} />
                 </div>
                 <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Message Sent!</h4>
-                <p className="text-gray-600 dark:text-gray-300">Thank you for your message. I"ll get back to you as soon as possible.</p>
+                <p className="text-gray-600 dark:text-gray-300">Thank you for your message. I&apos;ll get back to you as soon as possible.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -37,7 +37,7 @@ export function Projects() {
             </h1>
             <div className="w-24 h-2 bg-gradient-to-r from-orange-600 to-amber-600 rounded-full mx-auto mt-6 mb-4"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Here are some of the projects I've built to showcase my skills and passion for development.
+              Here are some of the projects I&apos;ve built to showcase my skills and passion for development.
             </p>
           </div>
         </div>
