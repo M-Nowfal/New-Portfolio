@@ -1,4 +1,11 @@
-import { BookOpen, Code, Cpu, Database, Globe, GraduationCap, Lightbulb, Mail, Phone, Terminal } from "lucide-react";
+"use client";
+
+import {
+  BookOpen, Code, Cpu, Database,
+  Download, Globe, GraduationCap,
+  Lightbulb, Mail, Phone, Terminal
+} from "lucide-react";
+import Link from "next/link";
 
 export function About() {
   const cardStyles = "rounded-2xl p-8 shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700 bg-white dark:bg-zinc-900/20 backdrop-blur-sm hover:scale-[1.02] hover:shadow-orange-600/20 hover:border-orange-600/30";
@@ -6,7 +13,7 @@ export function About() {
   return (
     <section id="about" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="py-10"></div>
-      
+
       {/* Section Header with Animation */}
       <div className="text-center mb-16 relative">
         <div className="absolute -inset-4 bg-gradient-to-r from-orange-600/10 to-amber-600/10 blur-3xl opacity-75 rounded-full mx-auto w-3/4"></div>
@@ -23,7 +30,7 @@ export function About() {
         {/* Left Column */}
         <div className="space-y-6">
           {/* Professional Summary Card */}
-          <div className={`${cardStyles} animate-float`}>
+          <div className={cardStyles}>
             <div className="flex items-start gap-4">
               <div className="p-3 bg-gradient-to-br from-orange-600/20 to-amber-600/20 rounded-full ring-2 ring-orange-600/30">
                 <BookOpen className="text-orange-600" size={24} />
@@ -123,7 +130,7 @@ export function About() {
           </div>
 
           {/* Current Focus Card */}
-          <div className={`${cardStyles} animate-float`}>
+          <div className={cardStyles}>
             <div className="flex items-start gap-4">
               <div className="p-3 bg-gradient-to-br from-orange-600/20 to-amber-600/20 rounded-full ring-2 ring-orange-600/30">
                 <Cpu className="text-orange-600" size={24} />
@@ -142,7 +149,7 @@ export function About() {
           </div>
         </div>
       </div>
-      
+
       {/* Contact Information */}
       <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 border border-orange-200 dark:border-orange-900/50">
         <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
@@ -156,21 +163,31 @@ export function About() {
             <span className="text-gray-600 dark:text-gray-300 text-sm">Degree</span>
             <span className="text-orange-600">B.Sc, Computer Science</span>
           </div>
-          <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-sm transition-all duration-300 hover:shadow-orange-600/20 hover:translate-y-1">
+          <Link href="tel:+918610297319" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-sm transition-all duration-300 hover:shadow-orange-600/20 hover:translate-y-1">
             <div className="p-3 bg-orange-600/10 rounded-full">
               <Phone size={24} className="text-orange-600" />
             </div>
             <span className="text-gray-600 dark:text-gray-300 text-sm">Phone</span>
             <span className="text-orange-600">+91 8610297319</span>
-          </div>
-          <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-sm transition-all duration-300 hover:shadow-orange-600/20 hover:translate-y-1">
+          </Link>
+          <Link href="mailto:nowfalmmuhammed@gmail.com" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-sm transition-all duration-300 hover:shadow-orange-600/20 hover:translate-y-1">
             <div className="p-3 bg-orange-600/10 rounded-full">
               <Mail size={24} className="text-orange-600" />
             </div>
             <span className="text-gray-600 dark:text-gray-300 text-sm">Email</span>
             <span className="text-orange-600 break-all">nowfalmmuhammed@gmail.com</span>
-          </div>
+          </Link>
         </address>
+        <div className="flex justify-center mt-5 animate-drift">
+          <Link
+            href="/nowfalresume.pdf"
+            download="Nowfal-Resume.pdf"
+            className="w-full sm:w-fit flex items-center justify-center gap-2 px-6 py-3 cursor-pointer bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all shadow-md hover:shadow-lg"
+          >
+            <Download size={18} />
+            Download CV
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -28,13 +28,15 @@ export function ProjectCard({ project }: { project: ProjectType }) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-orange-200 dark:border-orange-900/50 bg-white dark:bg-zinc-900/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-float">
+    <div className="group relative overflow-hidden rounded-2xl border border-orange-200 dark:border-orange-900/50 bg-white dark:bg-zinc-900/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
       {/* Image container */}
       <div className="relative overflow-hidden h-48">
         <Image
           src={project.image}
           alt={project.title}
           fill
+          sizes="100"
+          loading="lazy"
           className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
         {/* Category badge */}
@@ -55,6 +57,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
                 alt={"Git-Hub link"}
                 width={50}
                 height={50}
+                loading="lazy"
                 className="w-full"
               />
             </Link>
@@ -93,7 +96,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
         </div>
 
         {/* Action buttons */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center animate-drift">
           <Link
             href={project.githubUrl}
             target="_blank"
@@ -105,6 +108,7 @@ export function ProjectCard({ project }: { project: ProjectType }) {
               alt={"Git-Hub link"}
               width={50}
               height={50}
+              loading="lazy"
               className="w-7 dark:invert"
             />
             <span>Code</span>

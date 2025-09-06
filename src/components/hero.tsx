@@ -4,12 +4,13 @@ import { GraduationCap, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const floating_skills = [
     // Top row
     { src: "/skills/frontend/html.png", pos: "top-[10%] left-[35%]" },
-    { src: "/skills/frontend/css-3.png", pos: "top-[10%] right-[12%]" },
+    { src: "/skills/frontend/tailwind-css.png", pos: "top-[10%] right-[12%]" },
     { src: "/skills/frontend/react.png", pos: "top-[8%] left-[7%] w-25" },
 
     // Sides
@@ -20,31 +21,37 @@ export function Hero() {
 
     // Bottom row
     { src: "/skills/frontend/ts.jpg", pos: "bottom-[12%] left-[20%]" },
-    { src: "/skills/frontend/tailwind-css.png", pos: "bottom-[10%] left-[50%]" },
+    { src: "/skills/frontend/css-3.png", pos: "bottom-[10%] left-[50%]" },
     { src: "/skills/frontend/nextjs.png", pos: "bottom-[10%] right-[15%] dark:invert" },
   ];
 
   return (
-    <section className="relative flex flex-col md:flex-row-reverse justify-center items-center gap-10 w-full min-h-svh">
+    <section id="hero" className="relative flex flex-col md:flex-row-reverse justify-center items-center gap-10 w-full min-h-svh pt-10 md:p-0">
       {/* Floating skills around section */}
-      {floating_skills.map((skill, i) => (
-        <Image
-          key={skill.src}
-          src={skill.src}
-          alt="Skill"
-          width={60}
-          height={60}
-          className={`
-            absolute opacity-15 hover:opacity-80 hover:drop-shadow-xl transition rounded-2xl
-            animate-float
-            ${skill.pos}
-          `}
-          style={{ animationDelay: `${i * 1.2}s` }}
-        />
-      ))}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.8 }} // after profile photo (0.5s)
+      >
+        {floating_skills.map((skill, i) => (
+          <Image
+            key={skill.src}
+            src={skill.src}
+            alt="Skill"
+            width={60}
+            height={60}
+            className={`absolute opacity-25 hover:opacity-80 hover:drop-shadow-xl transition rounded-2xl animate-float ${skill.pos}`}
+            style={{ animationDelay: `${i * 2.6}s` }}
+          />
+        ))}
+      </motion.div>
 
       {/* Hero image */}
-      <figure className="inline-block">
+      <motion.figure
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="inline-block"
+      >
         <Image
           src="/portfolio/nowfal-portfolio.png"
           alt="Portfolio Image"
@@ -54,13 +61,18 @@ export function Hero() {
             rounded-[40%] sm:w-56 md:w-80 lg:w-96 
             drop-shadow-[15px_20px_20px_rgba(0,0,0,0.6)] 
             dark:drop-shadow-[0_0_20px_rgba(255,166,0,0.3)]
-            animate-drift
+            animate-drift w-auto h-auto
           "/>
-      </figure>
+      </motion.figure>
 
       {/* Hero content */}
       <div className="flex flex-col items-center gap-15 justify-center z-10">
-        <div className="text-4xl lg:text-6xl font-semibold text-center flex flex-col gap-7">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-4xl lg:text-6xl font-semibold text-center flex flex-col gap-7"
+        >
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold relative bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent drop-shadow-lg animate-pulse-slow">
             Muhammed Nowfal
           </h1>
@@ -85,12 +97,19 @@ export function Hero() {
               w-fit m-auto border bg-transparent border-orange-600 hover:bg-orange-700 transition 
               text-shadow-lg text-orange-700 hover:text-white font-bold cursor-pointer 
               hover:scale-105 shadow-md hover:shadow-2xl hover:shadow-orange-600 animate-float
-            ">
+            "
+            onClick={() => window.open("/nowfalresume.pdf", "__blank")}
+          >
             Resume
           </Button>
-        </div>
+        </motion.div>
 
-        <address className="not-italic text-gray-500 font-semibold flex flex-col gap-2 items-center">
+        <motion.address
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="not-italic text-gray-500 font-semibold flex flex-col gap-2 items-center"
+        >
           <div className="flex items-center gap-2">
             <GraduationCap size={22} /> B.Sc, Computer Science
           </div>
@@ -100,10 +119,7 @@ export function Hero() {
           <div className="flex items-center gap-2">
             <Mail size={20} /> nowfalmmuhammed@gmail.com
           </div>
-        </address>
-
-        {/* PlaceHolder */}
-        <div></div>
+        </motion.address>
       </div>
     </section>
   );

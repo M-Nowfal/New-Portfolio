@@ -118,17 +118,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -139,9 +146,11 @@ html::-webkit-scrollbar {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -154,12 +163,14 @@ html::-webkit-scrollbar {
 @keyframes drift {
   0% {
     transform: translateX(0);
-  } 
-  50% {
-    transform: translateX(-10px);
   }
+
+  50% {
+    transform: translateX(-7px);
+  }
+
   100% {
-    transform: translateX(10px);
+    transform: translateX(7px);
   }
 }
 

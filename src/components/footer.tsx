@@ -12,7 +12,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col gap-5 justify-center items-center footer footer-horizontal footer-center bg-gradient-to-tr from-orange-500/20 to-yellow-500/20 text-base-content rounded p-10 w-full border-t shadow-2xl shadow-orange-500">
+    <footer className="flex flex-col gap-10 justify-center items-center footer footer-horizontal footer-center bg-gradient-to-tr from-orange-500/20 to-yellow-500/20 text-base-content rounded p-10 w-full border-t shadow-2xl shadow-orange-500">
       <h2 className="text-2xl font-bold">Connect with me</h2>
       <p className="font-semibold text-center">I&apos;m open to freelance projects, collaborations, and tech discussions.</p>
       <nav className="flex items-center gap-4">

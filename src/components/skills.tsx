@@ -60,7 +60,7 @@ const Skills = () => {
 
   return (
     <section className="text-center pb-20 pt-10 px-4 sm:px-6 lg:px-8" id="skills">
-      <div className="py-10"></div>
+      <div className="pt-10"></div>
       {/* Header with orange gradient */}
       <div className="relative mb-16">
         <div className="absolute -inset-4 bg-gradient-to-r from-orange-600/10 to-amber-600/10 blur-3xl opacity-75 rounded-full mx-auto w-3/4"></div>
@@ -97,13 +97,13 @@ const Skills = () => {
                   >
                     <Image
                       src={skill.img}
-                      width={500}
-                      height={500}
-                      priority={false}
+                      width={64}
+                      height={64}
                       alt={skill.name}
+                      loading="lazy"
                       className={`
                         object-contain group-hover:drop-shadow-xl transition-all duration-300 rounded-2xl 
-                        drop-shadow-lg w-15 ${i % 2 === 0 ? "animate-float" : "animate-drift"} group-hover:scale-105
+                        drop-shadow-lg w-12 h-12 group-hover:scale-105
                         ${shouldInvert(category.name, i) && "dark:invert"}
                       `}
                     />
@@ -111,7 +111,6 @@ const Skills = () => {
                       {skill.name}
                     </figcaption>
                   </figure>
-
                 </div>
               ))}
             </div>
@@ -139,11 +138,11 @@ const Skills = () => {
             >
               <Image
                 src={skill.img}
-                width={300}
-                height={300}
-                priority={false}
+                width={64}
+                height={64}
                 alt={skill.name}
-                className="object-contain drop-shadow-md w-8 animate-drift"
+                loading="lazy"
+                className="object-contain drop-shadow-md w-8"
               />
               <figcaption className="font-medium text-orange-900 dark:text-orange-200">{skill.name}</figcaption>
             </figure>
